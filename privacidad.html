@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad — Lumi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #F5F0E8; --cream-dark: #EDE7DA; --gold: #C9A84C; --gold-light: #E8C97A;
+  --green: #2D5A3D; --green-light: #4A8C62; --dark: #1A1714;
+  --gray: #9A9490; --gray-light: #C8C3BB;
+  --text: #2A2520; --text-light: #6B6560;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--cream); font-family: 'DM Sans', sans-serif; color: var(--dark); min-height: 100vh; }
+header { position: sticky; top: 0; z-index: 100; padding: 1.25rem 3rem; display: flex; align-items: center; justify-content: space-between; background: rgba(245,240,232,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,168,76,0.15); }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-text { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; font-style: italic; color: var(--green); letter-spacing: 1.5px; }
+.back-link { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray); text-decoration: none; transition: color 0.2s; }
+.back-link:hover { color: var(--green); }
+.doc-hero { padding: 4rem 2rem 2rem; max-width: 760px; margin: 0 auto; }
+.doc-label { font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.doc-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px,5vw,52px); font-weight: 300; font-style: italic; color: var(--dark); line-height: 1.2; margin-bottom: 1rem; }
+.doc-meta { font-size: 12px; color: var(--gray-light); letter-spacing: 0.1em; }
+.doc-divider { height: 1px; background: linear-gradient(to right, var(--gold-light), transparent); opacity: 0.5; margin: 2rem 0; }
+.doc-body { max-width: 760px; margin: 0 auto; padding: 0 2rem 6rem; }
+.doc-notice { background: white; border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; font-size: 14px; color: var(--text-light); line-height: 1.7; }
+h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px,3vw,26px); font-weight: 400; font-style: italic; color: var(--green); margin: 2.5rem 0 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(201,168,76,0.2); }
+h3 { font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark); margin: 1.5rem 0 0.5rem; }
+p { font-size: 17px; font-weight: 300; color: var(--text-light); line-height: 1.8; margin-bottom: 1rem; }
+ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+ul li { font-size: 17px; font-weight: 300; color: var(--text-light); line-height: 1.8; margin-bottom: 0.4rem; }
+ul li::marker { color: var(--gold); }
+strong { color: var(--dark); font-weight: 500; }
+.alert-box { background: rgba(224,85,85,0.06); border-left: 3px solid #D04040; border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.alert-box p { color: #7A2020; margin: 0; }
+.alert-box strong { color: #D04040; }
+.info-box { background: rgba(45,90,61,0.05); border-left: 3px solid var(--green); border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.info-box p { color: var(--green); margin: 0; }
+.warn-box { background: rgba(201,168,76,0.08); border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+.warn-box p { color: #7A5A10; margin: 0; }
+.table-wrap { overflow-x: auto; margin: 1.25rem 0; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: rgba(45,90,61,0.08); color: var(--green); font-weight: 500; padding: 0.75rem 1rem; text-align: left; border-bottom: 2px solid rgba(45,90,61,0.15); }
+td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--cream-dark); color: var(--text-light); font-weight: 300; vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(201,168,76,0.1); }
+.footer-logo { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 0.75rem; }
+.footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 300; font-style: italic; color: var(--green); letter-spacing: 1.5px; }
+.footer-text { font-size: 11px; color: var(--gray-light); letter-spacing: 0.15em; text-transform: uppercase; }
+.footer-legal { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 0.75rem; }
+.footer-legal a { font-size: 10px; color: var(--gray-light); text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+.footer-legal a:hover { color: var(--green); }
+@media(max-width:600px){ header{padding:1rem 1.25rem;} .doc-hero{padding:2.5rem 1.25rem 1.5rem;} .doc-body{padding:0 1.25rem 4rem;} }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">
+    <svg width="22" height="22" viewBox="0 0 56 56" fill="none">
+      <ellipse cx="28" cy="28" rx="5" ry="23" fill="#C9A84C" opacity="0.93"/>
+      <ellipse cx="28" cy="28" rx="23" ry="5" fill="#C9A84C" opacity="0.93"/>
+      <ellipse cx="28" cy="28" rx="4" ry="17" fill="#C9A84C" transform="rotate(45 28 28)"/>
+      <ellipse cx="28" cy="28" rx="17" ry="4" fill="#C9A84C" transform="rotate(45 28 28)"/>
+      <circle cx="28" cy="28" r="4.5" fill="#F5F0E8"/>
+      <circle cx="28" cy="28" r="2.8" fill="#C9A84C"/>
+    </svg>
+    <span class="logo-text">lumi</span>
+  </a>
+  <a href="/" class="back-link">← Volver</a>
+</header>
+
+<div class="doc-hero">
+  <div class="doc-label">Documento II de III</div>
+  <h1 class="doc-title">Política de Tratamiento<br>de Datos Personales</h1>
+  <p class="doc-meta">En cumplimiento de la Ley 1581 de 2012 &nbsp;·&nbsp; Versión 1.0 &nbsp;·&nbsp; Vigente desde el 10 de marzo de 2026</p>
+  <div class="doc-divider"></div>
+</div>
+
+<div class="doc-body">
+
+  <div class="doc-notice">
+    Esta política explica qué datos recolecta Lumi, para qué los usa, cómo los protege y cuáles son tus derechos. Está redactada en cumplimiento de la <strong>Ley Estatutaria 1581 de 2012</strong> y el <strong>Decreto 1377 de 2013</strong> de Colombia.
+  </div>
+
+  <h2>1. Quién es responsable de tus datos</h2>
+  <div class="table-wrap">
+    <table>
+      <tbody>
+        <tr><td><strong>Nombre</strong></td><td>Susana Londoño Muñoz</td></tr>
+        <tr><td><strong>Identificación</strong></td><td>CC 1037635681</td></tr>
+        <tr><td><strong>Domicilio</strong></td><td>Envigado, Antioquia, Colombia</td></tr>
+        <tr><td><strong>Correo general</strong></td><td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="137f667e7a3d637a7f7c6753747e727a7f3d707c7e">[email&#160;protected]</a></td></tr>
+        <tr><td><strong>Datos personales</strong></td><td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="761a031b1f58061f1a190236111b171f1a5815191b">[email&#160;protected]</a> — asunto: DATOS PERSONALES</td></tr>
+        <tr><td><strong>Teléfono</strong></td><td>(+57) 321 532 1231</td></tr>
+        <tr><td><strong>Web</strong></td><td>soylumi.co</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>2. Qué datos recolectamos</h2>
+  <h3>Datos que tú nos das</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Dato</th><th>Cómo se recolecta</th></tr></thead>
+      <tbody>
+        <tr><td>Nombre</td><td>Formulario de registro en soylumi.co</td></tr>
+        <tr><td>Correo electrónico</td><td>Formulario de registro</td></tr>
+        <tr><td>Número de teléfono</td><td>Formulario de registro y WhatsApp</td></tr>
+        <tr><td>Contenido de conversaciones</td><td>Mensajes enviados a Lumi por WhatsApp</td></tr>
+        <tr><td>Mensajes de voz (futuro)</td><td>Audios enviados a Lumi por WhatsApp</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Datos generados por el sistema</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Dato</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>Hash del número</td><td>Identificador anonimizado (SHA-256) — tu número real no se almacena en texto claro</td></tr>
+        <tr><td>Perfil destilado</td><td>Síntesis generada por IA de tus conversaciones, actualizada cada 7 días de uso activo</td></tr>
+        <tr><td>Contadores de uso</td><td>Número de mensajes enviados por día (sin contenido)</td></tr>
+        <tr><td>Alerta de crisis</td><td>Número hasheado + frase que activó la alerta (sin historial completo)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert-box">
+    <p><strong>🔐 Tus conversaciones son datos sensibles — y están encriptadas</strong><br>Lo que le cuentes a Lumi puede incluir información sobre tu salud mental y bienestar emocional. La Ley 1581 de 2012 clasifica esto como dato sensible y exige protección reforzada.<br><br>Todas tus conversaciones y tu perfil destilado se almacenan <strong>encriptados con cifrado Fernet (AES-128-CBC)</strong> — esto significa que incluso si alguien accediera a la base de datos, no podría leer lo que escribiste. Solo los usamos para darte un mejor acompañamiento — nunca para otra cosa.</p>
+  </div>
+
+  <h2>3. Para qué usamos tus datos</h2>
+  <ul>
+    <li>Para prestarte el servicio de acompañamiento personal por WhatsApp</li>
+    <li>Para personalizar las preguntas y respuestas según tu contexto</li>
+    <li>Para generar y mantener actualizado tu perfil destilado</li>
+    <li>Para enviarte comunicaciones relacionadas con el servicio</li>
+    <li>Para activar el Protocolo de Crisis cuando detectemos señales de riesgo vital</li>
+    <li>Para cumplir con obligaciones legales ante autoridades competentes</li>
+    <li>Para gestionar el cobro del servicio (cuando aplique la suscripción)</li>
+  </ul>
+
+  <div class="alert-box">
+    <p><strong>🚫 Lo que Lumi NUNCA hace con tus datos</strong><br>Nunca los vendemos. Nunca los usamos para entrenar modelos de IA. Nunca los compartimos con anunciantes. Nunca los cedemos a psicólogos u otros profesionales sin tu consentimiento explícito.</p>
+  </div>
+
+  <h2>4. Cuánto tiempo guardamos tus datos</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Tipo de dato</th><th>Período de retención</th></tr></thead>
+      <tbody>
+        <tr><td>Conversaciones (mensajes)</td><td>30 días de inactividad, luego eliminación automática</td></tr>
+        <tr><td>Perfil destilado</td><td>Mientras tengas cuenta activa</td></tr>
+        <tr><td>Nombre y correo electrónico</td><td>Mientras tengas cuenta activa</td></tr>
+        <tr><td>Hash del número de teléfono</td><td>Mientras tengas cuenta activa</td></tr>
+        <tr><td>Registros de alertas de crisis</td><td>90 días desde la alerta</td></tr>
+        <tr><td>Datos de uso agregados</td><td>12 meses</td></tr>
+        <tr><td>Estadísticas anónimas (tras borrado total)</td><td>Indefinido. Al solicitar el borrado total, conservamos únicamente: número de mensajes enviados, días de uso activo y mes de primer/último uso — sin ningún identificador. Estos datos no constituyen datos personales conforme al artículo 3 de la Ley 1581/2012.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>5. Con quién compartimos tus datos</h2>
+  <p>Para operar el servicio, Lumi utiliza los siguientes encargados del tratamiento — empresas que procesan datos por nuestra cuenta bajo contrato:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Encargado</th><th>Función</th></tr></thead>
+      <tbody>
+        <tr><td>Anthropic, PBC</td><td>Modelo de IA (Claude API) — procesa el contenido de tus mensajes para generar respuestas</td></tr>
+        <tr><td>Meta Platforms, Inc.</td><td>WhatsApp Business API — canal de mensajería</td></tr>
+        <tr><td>Railway Corp.</td><td>Hosting del backend y base de datos PostgreSQL</td></tr>
+        <tr><td>Vercel Inc.</td><td>Hosting de la landing page (sin datos conversacionales)</td></tr>
+        <tr><td>Google LLC</td><td>Google Sheets — registro de solicitudes del piloto (nombre, email, teléfono)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Ninguno de estos encargados puede usar tus datos para sus propias finalidades comerciales. La transferencia de datos a estas empresas (ubicadas en EE. UU.) se realiza bajo mecanismos de protección adecuados conforme al Artículo 26 de la Ley 1581 de 2012.</p>
+
+  <h2>6. Cómo protegemos tus datos</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Medida</th><th>Descripción</th></tr></thead>
+      <tbody>
+        <tr><td>Encriptación en reposo</td><td>Conversaciones y perfil destilado almacenados con cifrado <strong>Fernet (AES-128-CBC)</strong>. Incluso si alguien accediera a la base de datos, no podría leer el contenido de tus mensajes.</td></tr>
+        <tr><td>Anonimización</td><td>Números de teléfono almacenados como hash SHA-256 — el número real no existe en la base de datos</td></tr>
+        <tr><td>Encriptación en tránsito</td><td>Todas las comunicaciones via HTTPS/TLS</td></tr>
+        <tr><td>Control de acceso</td><td>Solo el sistema automatizado accede a los datos. El equipo humano no puede leer conversaciones</td></tr>
+        <tr><td>Base de datos protegida</td><td>PostgreSQL con URL de conexión privada — no expuesta a internet</td></tr>
+        <tr><td>Retención limitada</td><td>Limpieza automática de conversaciones tras 30 días de inactividad</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>7. Tus derechos</h2>
+  <p>Conforme al Artículo 8 de la Ley 1581 de 2012, tienes los siguientes derechos:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Derecho</th><th>Qué significa</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Conocer</strong></td><td>Saber qué datos tiene Lumi sobre ti</td></tr>
+        <tr><td><strong>Actualizar</strong></td><td>Corregir datos inexactos o desactualizados</td></tr>
+        <tr><td><strong>Rectificar</strong></td><td>Enmendar errores en tus datos</td></tr>
+        <tr><td><strong>Suprimir</strong></td><td>Eliminar todos tus datos de forma irreversible (derecho al olvido)</td></tr>
+        <tr><td><strong>Revocar</strong></td><td>Retirar el consentimiento para el tratamiento en cualquier momento</td></tr>
+        <tr><td><strong>Acceder</strong></td><td>Obtener una copia de tus datos</td></tr>
+        <tr><td><strong>Quejas</strong></td><td>Presentar reclamaciones ante la SIC (www.sic.gov.co)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Para ejercer cualquier derecho, escribe a <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="107c657d793e60797c7f6450777d71797c3e737f7d">[email&#160;protected]</a></strong> (asunto: DATOS PERSONALES) o envía "BORRAR TODO" a Lumi por WhatsApp. Respondemos en máximo 10 días hábiles (consultas) o 15 días hábiles (reclamos).</p>
+
+  <h2>8. Datos sensibles</h2>
+  <div class="warn-box">
+    <p><strong>⚠️ Autorización explícita requerida</strong><br>Conforme al Artículo 6 de la Ley 1581 de 2012, el tratamiento de datos sensibles requiere tu autorización explícita. Al registrarte y marcar el checkbox correspondiente en el formulario, otorgas dicha autorización. No estás obligado/a a hacerlo — pero sin ella no podemos prestarte el servicio de acompañamiento.</p>
+  </div>
+
+  <h2>9. Menores de edad</h2>
+  <p>Lumi no está dirigido a personas menores de 18 años y no recolecta intencionalmente sus datos. Si detectamos que un usuario es menor de edad, cancelaremos la cuenta y eliminaremos todos sus datos de inmediato, conforme a la Ley 1098 de 2006.</p>
+
+  <h2>10. Modificaciones</h2>
+  <p>Podemos modificar esta Política en cualquier momento. Los cambios sustanciales serán comunicados con al menos 30 días de anticipación por WhatsApp o correo electrónico. La versión actualizada estará siempre disponible en soylumi.co/privacidad.</p>
+
+  <h2>11. Autoridad de control</h2>
+  <p>La Superintendencia de Industria y Comercio (SIC) es la autoridad de supervisión en materia de protección de datos personales en Colombia.</p>
+  <ul>
+    <li>Web: <strong>www.sic.gov.co</strong></li>
+    <li>Línea gratuita: <strong>01-800-910-165</strong></li>
+  </ul>
+
+  <div class="info-box">
+    <p>¿Tienes preguntas sobre el manejo de tus datos? Escríbenos a <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ae6ffe7e3a4fae3e6e5fecaede7ebe3e6a4e9e5e7">[email&#160;protected]</a> con el asunto DATOS PERSONALES.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <svg width="18" height="18" viewBox="0 0 56 56" fill="none">
+      <ellipse cx="28" cy="28" rx="5" ry="23" fill="#C9A84C" opacity="0.93"/>
+      <ellipse cx="28" cy="28" rx="23" ry="5" fill="#C9A84C" opacity="0.93"/>
+      <ellipse cx="28" cy="28" rx="4" ry="17" fill="#C9A84C" transform="rotate(45 28 28)"/>
+      <ellipse cx="28" cy="28" rx="17" ry="4" fill="#C9A84C" transform="rotate(45 28 28)"/>
+      <circle cx="28" cy="28" r="4.
