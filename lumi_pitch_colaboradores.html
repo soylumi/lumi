@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumi — Colabora con nosotros</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F7F3EC;
+  --ink: #1A1714;
+  --ink2: #4A4540;
+  --ink3: #9A9390;
+  --green: #2D5A3D;
+  --green2: #4A8C62;
+  --green-pale: #EDF5F0;
+  --gold: #C9A84C;
+  --gold-warm: #E8C97A;
+  --line: #E5DFD6;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes glow { 0%,100% { filter:drop-shadow(0 0 6px rgba(201,168,76,0.3)); } 50% { filter:drop-shadow(0 0 16px rgba(201,168,76,0.6)); } }
+@keyframes ring { 0% { transform:scale(1); opacity:0.5; } 100% { transform:scale(2.4); opacity:0; } }
+.fade { animation: fadeUp 0.9s ease both; }
+.d1{animation-delay:0.1s;} .d2{animation-delay:0.25s;} .d3{animation-delay:0.4s;} .d4{animation-delay:0.55s;}
+
+/* HERO */
+.hero { min-height:100svh; background:var(--green); display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:4rem 2rem 3rem; position:relative; overflow:hidden; }
+.hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 50% at 50% 40%, rgba(0,0,0,0.15) 0%, transparent 70%); }
+.star-wrap { position:relative; width:64px; height:64px; margin:0 auto 2rem; }
+.star-wrap svg { animation: glow 3s ease-in-out infinite; }
+.ring { position:absolute; inset:0; border-radius:50%; border:1px solid rgba(232,201,122,0.35); animation: ring 2.5s ease-out infinite; }
+.ring:nth-child(2) { animation-delay:0.9s; }
+.eyebrow { font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:rgba(232,201,122,0.8); margin-bottom:1.25rem; }
+.hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(38px,9vw,64px); font-weight:300; line-height:1.05; color:white; margin-bottom:1.5rem; }
+.hero h1 em { font-style:italic; color:var(--gold-warm); }
+.hero-sub { font-size:clamp(14px,3.5vw,16px); color:rgba(255,255,255,0.6); max-width:360px; line-height:1.8; }
+
+/* SECTIONS */
+section { padding:4.5rem 1.5rem; max-width:500px; margin:0 auto; }
+.tag { font-size:9px; letter-spacing:0.4em; text-transform:uppercase; color:var(--gold); margin-bottom:1.25rem; display:flex; align-items:center; gap:0.75rem; }
+.tag::after { content:''; height:1px; width:28px; background:var(--gold); opacity:0.3; }
+h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,6vw,42px); font-weight:300; line-height:1.1; margin-bottom:1.25rem; }
+h2 em { font-style:italic; color:var(--green); }
+.body { font-size:15px; line-height:1.85; color:var(--ink2); margin-bottom:1rem; }
+
+/* TABS */
+.tabs { display:flex; gap:0; margin:2rem 0 0; border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+.tab { flex:1; padding:0.875rem 0.5rem; text-align:center; font-size:13px; font-weight:500; cursor:pointer; background:white; color:var(--ink3); border:none; transition:all 0.2s; }
+.tab.active { background:var(--green); color:white; }
+
+.tab-content { display:none; padding:2rem 0; }
+.tab-content.active { display:block; }
+
+.role-card { background:white; border:1px solid var(--line); border-radius:14px; padding:1.5rem; margin-bottom:1rem; }
+.role-card h4 { font-size:15px; font-weight:500; color:var(--ink); margin-bottom:0.75rem; display:flex; align-items:center; gap:0.5rem; }
+.role-card p { font-size:14px; color:var(--ink2); line-height:1.7; margin-bottom:0.75rem; }
+.role-card ul { padding-left:1.25rem; }
+.role-card li { font-size:13px; color:var(--ink2); line-height:1.7; margin-bottom:0.25rem; }
+
+.code-block { background:var(--ink); border-radius:10px; padding:1.25rem; margin:1rem 0; font-family:'DM Mono',monospace; font-size:12px; color:#A8C5B0; line-height:1.7; overflow-x:auto; }
+.code-block .comment { color:#556B5A; }
+.code-block .key { color:var(--gold-warm); }
+
+/* QUÉ OFRECE LUMI */
+.ofrece { border-top:1px solid var(--line); background:var(--green-pale); border-radius:24px; max-width:none; padding:4rem 1.5rem; }
+.ofrece-inner { max-width:500px; margin:0 auto; }
+.offer-item { display:flex; gap:1rem; padding:1.1rem 0; border-bottom:1px solid rgba(45,90,61,0.12); align-items:flex-start; }
+.offer-item:last-child { border-bottom:none; }
+.offer-icon { width:36px; height:36px; border-radius:8px; background:var(--green); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:16px; }
+.offer-text h5 { font-size:14px; font-weight:500; color:var(--ink); margin-bottom:0.2rem; }
+.offer-text p { font-size:13px; color:var(--ink2); line-height:1.6; }
+
+/* ÉTICA */
+.etica { border-top:1px solid var(--line); }
+.etica-box { background:var(--ink); border-radius:16px; padding:2rem; margin:2rem 0; color:white; }
+.etica-box h4 { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:300; color:var(--gold-warm); margin-bottom:1rem; }
+.etica-box li { font-size:13px; line-height:1.8; color:rgba(255,255,255,0.7); margin-bottom:0.25rem; list-style:none; display:flex; gap:0.5rem; }
+
+/* STACK */
+.stack { border-top:1px solid var(--line); }
+.stack-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin:1.5rem 0; }
+.stack-item { background:white; border:1px solid var(--line); border-radius:10px; padding:1rem; }
+.stack-item h5 { font-size:11px; letter-spacing:0.1em; color:var(--ink3); text-transform:uppercase; margin-bottom:0.3rem; }
+.stack-item p { font-size:13px; color:var(--ink); font-weight:500; }
+
+/* CIERRE */
+.cierre { background:var(--ink); padding:5rem 1.5rem; text-align:center; }
+.cierre-inner { max-width:380px; margin:0 auto; }
+.cierre h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(30px,7vw,48px); font-weight:300; color:var(--cream); line-height:1.15; margin-bottom:1.25rem; }
+.cierre h2 em { font-style:italic; color:var(--gold-warm); }
+.cierre p { font-size:14px; color:rgba(247,243,236,0.4); line-height:1.8; }
+.logo-foot { display:flex; align-items:center; justify-content:center; gap:8px; margin-top:3rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.06); }
+.logo-foot span { font-family:'Cormorant Garamond',serif; font-size:22px; font-style:italic; color:var(--green2); letter-spacing:2px; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="star-wrap">
+    <div class="ring"></div><div class="ring"></div>
+    <svg width="64" height="64" viewBox="0 0 56 56" fill="none">
+      <ellipse cx="28" cy="28" rx="5" ry="23" fill="#E8C97A" opacity="0.93"/>
+      <ellipse cx="28" cy="28" rx="23" ry="5" fill="#E8C97A" opacity="0.93"/>
+      <ellipse cx="28" cy="28" rx="4" ry="17" fill="#E8C97A" transform="rotate(45 28 28)"/>
+      <ellipse cx="28" cy="28" rx="17" ry="4" fill="#E8C97A" transform="rotate(45 28 28)"/>
+      <circle cx="28" cy="28" r="4.5" fill="#2D5A3D"/>
+      <circle cx="28" cy="28" r="2.8" fill="#E8C97A"/>
+    </svg>
+  </div>
+  <p class="eyebrow fade d1">Lumi · Colaboradores</p>
+  <h1 class="fade d2">Construyamos algo<br>que <em>realmente</em><br>ayude a la gente.</h1>
+  <p class="hero-sub fade d3">Lumi es un acompañante con IA para la vida cotidiana. Buscamos personas que quieran construirlo bien — desde adentro.</p>
+</div>
+
+<!-- PARA QUIÉN -->
+<section>
+  <div class="tag">¿Quiénes buscamos?</div>
+  <h2>Dos perfiles.<br><em>Una misma misión.</em></h2>
+  <p class="body">Lumi necesita criterio clínico y capacidad técnica desde el principio — no como validación posterior, sino como parte del ADN del producto.</p>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('psi')">🧠 Psicólogos</button>
+    <button class="tab" onclick="showTab('dev')">💻 Desarrolladores</button>
+  </div>
+
+  <!-- Psicólogos -->
+  <div class="tab-content active" id="tab-psi">
+    <div class="role-card">
+      <h4>🧠 Profesional de salud mental</h4>
+      <p>Lumi no puede construirse bien sin tu mirada. Necesitamos a alguien que garantice que cada decisión de producto responde a criterios clínicos sólidos.</p>
+      <ul>
+        <li>Definir límites éticos y protocolo de crisis</li>
+        <li>Diseñar el onboarding y las preguntas del loop</li>
+        <li>Integrar escalas clínicas de forma pasiva (PHQ-9, GAD-7)</li>
+        <li>Curar el directorio de psicólogos verificados</li>
+        <li>Validar que Lumi siempre deriva — nunca retiene</li>
+      </ul>
+    </div>
+    <div class="role-card" style="background:#FDF8F8; border-color:#F0E8E8;">
+      <h4>✗ Lo que Lumi no hará nunca</h4>
+      <p style="color:#9A7070; font-size:13px;">Diagnosticar. Sugerir medicación. Contener crisis sin derivar. Reemplazar tratamiento. Tu criterio es el que garantiza esto.</p>
+    </div>
+  </div>
+
+  <!-- Desarrolladores -->
+  <div class="tab-content" id="tab-dev">
+    <div class="role-card">
+      <h4>💻 Desarrollador / técnico</h4>
+      <p>El MVP está funcionando. Lo que viene requiere a alguien que quiera construir con criterio — no solo que funcione, sino que sea seguro y escalable.</p>
+      <ul>
+        <li>Migrar memoria de RAM a PostgreSQL encriptado</li>
+        <li>Implementar transcripción de voz (adultos mayores)</li>
+        <li>Construir landing con onboarding y perfil de usuario</li>
+        <li>Diseñar arquitectura de privacidad por defecto</li>
+        <li>Integrar sistema de alertas de crisis</li>
+      </ul>
+    </div>
+    <div class="code-block">
+      <span class="comment"># Stack actual</span><br>
+      <span class="key">backend:</span> Python + Flask<br>
+      <span class="key">ia:</span> Claude API (Anthropic)<br>
+      <span class="key">canal:</span> WhatsApp Business API<br>
+      <span class="key">hosting:</span> Railway.app<br>
+      <span class="key">db:</span> PostgreSQL (pendiente)<br>
+      <span class="key">costo:</span> &lt; $20 USD/mes
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ OFRECE LUMI -->
+<div class="ofrece">
+  <div class="ofrece-inner">
+    <div class="tag">Qué ofrece Lumi</div>
+    <h2>No solo un proyecto.<br><em>Una oportunidad real.</em></h2>
+    <div>
+      <div class="offer-item">
+        <div class="offer-icon">🌱</div>
+        <div class="offer-text"><h5>Participación en el proyecto</h5><p>El modelo de participación lo definimos juntos — según lo que tenga sentido para ti y para el producto.</p></div>
+      </div>
+      <div class="offer-item">
+        <div class="offer-icon">🏥</div>
+        <div class="offer-text"><h5>Primera entrada al directorio</h5><p>Para psicólogos: tu perfil verificado en el directorio de Lumi desde el día uno, sin costo.</p></div>
+      </div>
+      <div class="offer-item">
+        <div class="offer-icon">🔨</div>
+        <div class="offer-text"><h5>Construir desde cero</h5><p>No entras a mantener código heredado — entras a diseñar las decisiones que importan desde el principio.</p></div>
+      </div>
+      <div class="offer-item">
+        <div class="offer-icon">💛</div>
+        <div class="offer-text"><h5>Un producto que importa</h5><p>Millones de personas sin acompañamiento cotidiano. Adultos mayores solos. Una oportunidad genuina de ayudar.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ÉTICA -->
+<section class="etica">
+  <div class="tag">Nuestros límites</div>
+  <h2>Lo que nunca<br><em>vamos a cruzar.</em></h2>
+  <p class="body">Lumi se construye desde la ética — no como cláusula legal, sino como decisión de diseño.</p>
+  <div class="etica-box">
+    <h4>Compromisos no negociables</h4>
+    <ul>
+      <li>✦ Privacidad por defecto — conversaciones encriptadas, nadie las lee</li>
+      <li>✦ Siempre deriva — nunca retiene a quien necesita ayuda profesional</li>
+      <li>✦ Límites de uso — Lumi empuja hacia la vida real, no engancha</li>
+      <li>✦ Sin diagnósticos — nunca cruza la línea clínica</li>
+      <li>✦ Protocolo de crisis — deriva inmediatamente ante riesgo de vida</li>
+    </ul>
+  </div>
+</section>
+
+<!-- STACK -->
+<section class="stack">
+  <div class="tag">El proyecto hoy</div>
+  <h2>Ya existe.<br><em>Necesita crecer bien.</em></h2>
+  <div class="stack-grid">
+    <div class="stack-item"><h5>IA</h5><p>Claude API</p></div>
+    <div class="stack-item"><h5>Canal</h5><p>WhatsApp Business</p></div>
+    <div class="stack-item"><h5>Backend</h5><p>Python + Flask</p></div>
+    <div class="stack-item"><h5>Hosting</h5><p>Railway.app</p></div>
+    <div class="stack-item"><h5>Estado</h5><p>MVP activo ✓</p></div>
+    <div class="stack-item"><h5>Costo/mes</h5><p>&lt; $20 USD</p></div>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<div class="cierre">
+  <div class="cierre-inner">
+    <h2>Una conversación.<br><em>Sin compromisos todavía.</em></h2>
+    <p>Si esto resuena contigo — como profesional, como desarrollador, o como persona — hablemos.</p>
+    <div class="logo-foot">
+      <svg width="20" height="20" viewBox="0 0 56 56" fill="none">
+        <ellipse cx="28" cy="28" rx="5" ry="23" fill="#E8C97A" opacity="0.93"/>
+        <ellipse cx="28" cy="28" rx="23" ry="5" fill="#E8C97A" opacity="0.93"/>
+        <ellipse cx="28" cy="28" rx="4" ry="17" fill="#E8C97A" transform="rotate(45 28 28)"/>
+        <ellipse cx="28" cy="28" rx="17" ry="4" fill="#E8C97A" transform="rotate(45 28 28)"/>
+        <circle cx="28" cy="28" r="4.5" fill="#1A1714"/>
+        <circle cx="28" cy="28" r="2.8" fill="#E8C97A"/>
+      </svg>
+      <span>lumi</span>
+    </div>
+  </div>
+</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>

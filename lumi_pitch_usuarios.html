@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumi — Tu acompañante</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F7F3EC;
+  --ink: #1A1714;
+  --ink2: #4A4540;
+  --ink3: #9A9390;
+  --green: #2D5A3D;
+  --green2: #4A8C62;
+  --green-pale: #EDF5F0;
+  --gold: #C9A84C;
+  --gold-warm: #E8C97A;
+  --line: #E5DFD6;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes glow { 0%,100% { filter:drop-shadow(0 0 6px rgba(201,168,76,0.3)); } 50% { filter:drop-shadow(0 0 16px rgba(201,168,76,0.6)); } }
+@keyframes ring { 0% { transform:scale(1); opacity:0.5; } 100% { transform:scale(2.4); opacity:0; } }
+
+.fade { animation: fadeUp 0.9s ease both; }
+.d1 { animation-delay:0.1s; } .d2 { animation-delay:0.25s; } .d3 { animation-delay:0.4s; } .d4 { animation-delay:0.55s; }
+
+/* HERO */
+.hero {
+  min-height: 100svh;
+  background: var(--ink);
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; padding: 4rem 2rem 3rem;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content:''; position:absolute; inset:0;
+  background: radial-gradient(ellipse 70% 50% at 50% 40%, rgba(45,90,61,0.2) 0%, transparent 70%);
+}
+.star-wrap { position:relative; width:64px; height:64px; margin:0 auto 2rem; }
+.star-wrap svg { animation: glow 3s ease-in-out infinite; }
+.ring { position:absolute; inset:0; border-radius:50%; border:1px solid rgba(201,168,76,0.35); animation: ring 2.5s ease-out infinite; }
+.ring:nth-child(2) { animation-delay:0.9s; }
+
+.eyebrow { font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--gold); margin-bottom:1.25rem; }
+.hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(40px,10vw,68px); font-weight:300; line-height:1.05; color:var(--cream); margin-bottom:1.5rem; }
+.hero h1 em { font-style:italic; color:var(--gold-warm); }
+.hero-sub { font-size:clamp(15px,3.5vw,17px); color:rgba(247,243,236,0.55); max-width:340px; line-height:1.8; margin-bottom:2.5rem; }
+.hero-note { font-size:12px; color:rgba(247,243,236,0.3); letter-spacing:0.05em; }
+
+/* SECTIONS */
+section { padding:4.5rem 1.5rem; max-width:500px; margin:0 auto; }
+.tag { font-size:9px; letter-spacing:0.4em; text-transform:uppercase; color:var(--gold); margin-bottom:1.25rem; display:flex; align-items:center; gap:0.75rem; }
+.tag::after { content:''; height:1px; width:28px; background:var(--gold); opacity:0.3; }
+h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,6vw,42px); font-weight:300; line-height:1.1; margin-bottom:1.25rem; }
+h2 em { font-style:italic; color:var(--green); }
+.body { font-size:15px; line-height:1.85; color:var(--ink2); margin-bottom:1rem; }
+
+/* PAIN */
+.pain { border-top:1px solid var(--line); }
+.pain-cards { display:flex; flex-direction:column; gap:0.75rem; margin:2rem 0; }
+.pain-card { background:white; border:1px solid var(--line); border-radius:12px; padding:1.25rem 1.25rem 1.25rem 1.5rem; border-left:3px solid var(--gold); }
+.pain-card p { font-family:'Cormorant Garamond',serif; font-size:18px; font-style:italic; color:var(--ink); line-height:1.5; }
+.pain-card span { font-size:12px; color:var(--ink3); margin-top:0.4rem; display:block; }
+
+/* QUÉ ES */
+.que-es { border-top:1px solid var(--line); background:var(--green-pale); border-radius:24px; max-width:none; padding:4rem 1.5rem; }
+.que-es-inner { max-width:500px; margin:0 auto; }
+.feature { display:flex; gap:1rem; padding:1rem 0; border-bottom:1px solid rgba(45,90,61,0.12); font-size:14px; color:var(--ink2); align-items:flex-start; }
+.feature:last-child { border-bottom:none; }
+.feature-icon { color:var(--green); font-size:16px; margin-top:1px; flex-shrink:0; }
+
+/* LOOP */
+.loop-section { border-top:1px solid var(--line); }
+.wa-mock { background:white; border-radius:16px; border:1px solid var(--line); overflow:hidden; margin:2rem 0; }
+.wa-header { background:var(--green); padding:1rem 1.25rem; display:flex; align-items:center; gap:0.75rem; }
+.wa-avatar { width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; }
+.wa-name { font-size:14px; font-weight:500; color:white; }
+.wa-status { font-size:11px; color:rgba(255,255,255,0.6); }
+.wa-body { padding:1.25rem; display:flex; flex-direction:column; gap:0.625rem; }
+.bubble { max-width:82%; padding:0.625rem 0.875rem; border-radius:10px; font-size:13px; line-height:1.6; }
+.bubble.lumi { background:#F0F0F0; color:var(--ink); border-radius:2px 10px 10px 10px; align-self:flex-start; }
+.bubble.lumi strong { display:block; font-size:10px; color:var(--green); margin-bottom:0.2rem; letter-spacing:0.05em; }
+.bubble.user { background:var(--green); color:white; border-radius:10px 2px 10px 10px; align-self:flex-end; }
+.bubble-time { font-size:10px; color:var(--ink3); align-self:flex-end; margin-top:0.25rem; }
+
+/* PARA QUIÉN */
+.para-quien { border-top:1px solid var(--line); }
+.who-cards { display:flex; flex-direction:column; gap:0.75rem; margin:2rem 0; }
+.who-card { background:white; border:1px solid var(--line); border-radius:12px; padding:1.25rem; }
+.who-card h4 { font-size:14px; font-weight:500; color:var(--ink); margin-bottom:0.4rem; }
+.who-card p { font-size:13px; color:var(--ink2); line-height:1.6; }
+
+/* PRIVACIDAD */
+.privacidad { border-top:1px solid var(--line); }
+.priv-list { display:flex; flex-direction:column; gap:0.5rem; margin:1.5rem 0; }
+.priv-item { display:flex; gap:0.75rem; font-size:14px; color:var(--ink2); align-items:flex-start; padding:0.75rem 1rem; background:white; border-radius:10px; border:1px solid var(--line); }
+
+/* CIERRE */
+.cierre { background:var(--ink); padding:5rem 1.5rem; text-align:center; }
+.cierre-inner { max-width:380px; margin:0 auto; }
+.cierre h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(30px,7vw,48px); font-weight:300; color:var(--cream); line-height:1.15; margin-bottom:1.25rem; }
+.cierre h2 em { font-style:italic; color:var(--gold-warm); }
+.cierre p { font-size:14px; color:rgba(247,243,236,0.4); line-height:1.8; margin-bottom:2rem; }
+.cta { display:inline-block; background:var(--green); color:white; padding:0.875rem 2rem; border-radius:6px; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; }
+.logo-foot { display:flex; align-items:center; justify-content:center; gap:8px; margin-top:3rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.06); }
+.logo-foot span { font-family:'Cormorant Garamond',serif; font-size:22px; font-style:italic; color:var(--green2); letter-spacing:2px; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="star-wrap">
+    <div class="ring"></div><div class="ring"></div>
+    <svg width="64" height="64" viewBox="0 0 56 56" fill="none">
+      <ellipse cx="28" cy="28" rx="5" ry="23" fill="#E8C97A" opacity="0.93"/>
+      <ellipse cx="28" cy="28" rx="23" ry="5" fill="#E8C97A" opacity="0.93"/>
+      <ellipse cx="28" cy="28" rx="4" ry="17" fill="#E8C97A" transform="rotate(45 28 28)"/>
+      <ellipse cx="28" cy="28" rx="17" ry="4" fill="#E8C97A" transform="rotate(45 28 28)"/>
+      <circle cx="28" cy="28" r="4.5" fill="#1A1714"/>
+      <circle cx="28" cy="28" r="2.8" fill="#E8C97A"/>
+    </svg>
+  </div>
+  <p class="eyebrow fade d1">Lumi · Tu acompañante</p>
+  <h1 class="fade d2">¿Cuándo fue<br>la última vez que<br><em>alguien te preguntó<br>cómo estás, de verdad?</em></h1>
+  <p class="hero-sub fade d3">Lumi llega cada día por WhatsApp con las preguntas que nadie más te hace.</p>
+  <p class="hero-note fade d4">Sin apps · Sin registros · Solo WhatsApp</p>
+</div>
+
+<!-- EL DOLOR -->
+<section class="pain">
+  <div class="tag">¿Te suena familiar?</div>
+  <h2>La vida pasa<br><em>sin que te detengas.</em></h2>
+  <p class="body">No es que no tengas ganas de conocerte mejor. Es que el día a día no deja espacio para preguntarte lo que importa.</p>
+  <div class="pain-cards">
+    <div class="pain-card"><p>"Sé que algo tiene que cambiar, pero no sé por dónde empezar."</p></div>
+    <div class="pain-card"><p>"Tengo todo, pero siento que voy en piloto automático."</p></div>
+    <div class="pain-card"><p>"Mi mamá vive sola y no hay nadie que le pregunte cómo está."</p></div>
+  </div>
+</section>
+
+<!-- QUÉ ES -->
+<div class="que-es">
+  <div class="que-es-inner">
+    <div class="tag">Qué es Lumi</div>
+    <h2>Tu espacio diario<br><em>para conocerte mejor.</em></h2>
+    <p class="body">Lumi es un acompañante con IA que llega por WhatsApp cada día. Aprende quién eres con el tiempo y te devuelve preguntas que te ayudan a verte con más claridad.</p>
+    <div style="margin-top:1.5rem;">
+      <div class="feature"><span class="feature-icon">✦</span> Una pregunta profunda cada mañana — nunca genérica</div>
+      <div class="feature"><span class="feature-icon">✦</span> Memoria que crece contigo — Lumi recuerda lo que importa</div>
+      <div class="feature"><span class="feature-icon">✦</span> Un cierre cada noche — pregunta, sugerencia o frase que resuene</div>
+      <div class="feature"><span class="feature-icon">✦</span> Para adultos mayores: funciona 100% por voz</div>
+      <div class="feature" style="color:#9A7070;"><span style="color:#C0392B;">✗</span> No es terapia — siempre te invita a buscar ayuda profesional</div>
+    </div>
+  </div>
+</div>
+
+<!-- CÓMO SE VE -->
+<section class="loop-section">
+  <div class="tag">Cómo se ve</div>
+  <h2>Una conversación<br><em>que cambia el día.</em></h2>
+  <div class="wa-mock">
+    <div class="wa-header">
+      <div class="wa-avatar">
+        <svg width="20" height="20" viewBox="0 0 56 56" fill="none">
+          <ellipse cx="28" cy="28" rx="5" ry="23" fill="#E8C97A" opacity="0.93"/>
+          <ellipse cx="28" cy="28" rx="23" ry="5" fill="#E8C97A" opacity="0.93"/>
+          <ellipse cx="28" cy="28" rx="4" ry="17" fill="#E8C97A" transform="rotate(45 28 28)"/>
+          <ellipse cx="28" cy="28" rx="17" ry="4" fill="#E8C97A" transform="rotate(45 28 28)"/>
+          <circle cx="28" cy="28" r="4.5" fill="#1A1714"/>
+          <circle cx="28" cy="28" r="2.8" fill="#E8C97A"/>
+        </svg>
+      </div>
+      <div><div class="wa-name">Lumi</div><div class="wa-status">Tu acompañante · en línea</div></div>
+    </div>
+    <div class="wa-body">
+      <div class="bubble lumi"><strong>Lumi · 7:30am</strong>Buenos días. ¿Qué es lo que más estás evitando hacer esta semana — y por qué crees que lo evitas?</div>
+      <div class="bubble user">Uf... llamar a mi mamá. Supongo que me da culpa no haberlo hecho antes.</div>
+      <div class="bubble lumi"><strong>Lumi</strong>La culpa que describes, ¿te paraliza o te impulsa?</div>
+      <div class="bubble user">Me paraliza. Definitivamente.</div>
+      <div class="bubble lumi"><strong>Lumi · cierre</strong>Hoy descubriste algo importante sobre cómo la culpa te detiene. Mañana, antes del mediodía, llama 5 minutos. Solo eso.</div>
+      <div class="bubble-time">✓✓ leído</div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section class="para-quien">
+  <div class="tag">¿Es para ti?</div>
+  <h2>Para cualquiera que<br><em>quiera conocerse mejor.</em></h2>
+  <div class="who-cards">
+    <div class="who-card"><h4>🌱 Si buscas dirección</h4><p>Estás en un momento de cambio, transición, o simplemente sientes que la vida pasa sin que te detengas a mirarla.</p></div>
+    <div class="who-card"><h4>🧠 Si estás en terapia</h4><p>Lumi no reemplaza a tu psicólogo — es el espacio entre sesiones para seguir pensando lo que trabajas ahí.</p></div>
+    <div class="who-card"><h4>👴 Si piensas en alguien mayor</h4><p>Tu papá, tu abuela, tu tía. Lumi funciona por voz — sin leer, sin escribir. Solo hablar.</p></div>
+  </div>
+</section>
+
+<!-- PRIVACIDAD -->
+<section class="privacidad">
+  <div class="tag">Tu privacidad</div>
+  <h2>Lo que dices aquí<br><em>se queda aquí.</em></h2>
+  <div class="priv-list">
+    <div class="priv-item">🔒 Conversaciones encriptadas — nadie las lee, ni el equipo de Lumi</div>
+    <div class="priv-item">🗑️ Puedes pedir borrar todo en cualquier momento</div>
+    <div class="priv-item">🚨 Si detecta una crisis, Lumi deriva inmediatamente a líneas de ayuda</div>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<div class="cierre">
+  <div class="cierre-inner">
+    <h2>¿Empezamos<br><em>hoy?</em></h2>
+    <p>Escríbele "Hola" a Lumi por WhatsApp. Sin registros, sin apps, sin compromisos.</p>
+    <div class="logo-foot">
+      <svg width="20" height="20" viewBox="0 0 56 56" fill="none">
+        <ellipse cx="28" cy="28" rx="5" ry="23" fill="#E8C97A" opacity="0.93"/>
+        <ellipse cx="28" cy="28" rx="23" ry="5" fill="#E8C97A" opacity="0.93"/>
+        <ellipse cx="28" cy="28" rx="4" ry="17" fill="#E8C97A" transform="rotate(45 28 28)"/>
+        <ellipse cx="28" cy="28" rx="17" ry="4" fill="#E8C97A" transform="rotate(45 28 28)"/>
+        <circle cx="28" cy="28" r="4.5" fill="#1A1714"/>
+        <circle cx="28" cy="28" r="2.8" fill="#E8C97A"/>
+      </svg>
+      <span>lumi</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

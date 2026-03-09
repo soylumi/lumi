@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumi — Investor Pitch</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F7F3EC;
+  --ink: #1A1714;
+  --ink2: #4A4540;
+  --ink3: #9A9390;
+  --green: #2D5A3D;
+  --green2: #4A8C62;
+  --green-pale: #EDF5F0;
+  --gold: #C9A84C;
+  --gold-warm: #E8C97A;
+  --gold-pale: #FDF8EE;
+  --line: #E5DFD6;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes glow { 0%,100% { filter:drop-shadow(0 0 6px rgba(201,168,76,0.3)); } 50% { filter:drop-shadow(0 0 18px rgba(201,168,76,0.65)); } }
+@keyframes ring { 0% { transform:scale(1); opacity:0.5; } 100% { transform:scale(2.4); opacity:0; } }
+.fade { animation: fadeUp 0.9s ease both; }
+.d1{animation-delay:0.1s;} .d2{animation-delay:0.25s;} .d3{animation-delay:0.4s;} .d4{animation-delay:0.55s;}
+
+/* HERO */
+.hero { min-height:100svh; background:var(--ink); display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:4rem 2rem 3rem; position:relative; overflow:hidden; }
+.hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 50% at 50% 35%, rgba(201,168,76,0.08) 0%, transparent 70%); }
+.star-wrap { position:relative; width:64px; height:64px; margin:0 auto 2rem; }
+.star-wrap svg { animation: glow 3s ease-in-out infinite; }
+.ring { position:absolute; inset:0; border-radius:50%; border:1px solid rgba(201,168,76,0.3); animation: ring 2.5s ease-out infinite; }
+.ring:nth-child(2) { animation-delay:0.9s; }
+.eyebrow { font-size:10px; letter-spacing:0.4em; text-transform:uppercase; color:var(--gold); margin-bottom:1.25rem; }
+.hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(38px,9vw,66px); font-weight:300; line-height:1.05; color:var(--cream); margin-bottom:1.5rem; }
+.hero h1 em { font-style:italic; color:var(--gold-warm); }
+.hero-sub { font-size:clamp(14px,3.5vw,16px); color:rgba(247,243,236,0.5); max-width:360px; line-height:1.8; margin-bottom:2rem; }
+.hero-chips { display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; }
+.chip { font-size:11px; padding:0.4rem 0.875rem; border-radius:100px; border:1px solid rgba(255,255,255,0.1); color:rgba(247,243,236,0.45); }
+
+/* SECTIONS */
+section { padding:4.5rem 1.5rem; max-width:500px; margin:0 auto; }
+.tag { font-size:9px; letter-spacing:0.4em; text-transform:uppercase; color:var(--gold); margin-bottom:1.25rem; display:flex; align-items:center; gap:0.75rem; }
+.tag::after { content:''; height:1px; width:28px; background:var(--gold); opacity:0.3; }
+h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,6vw,42px); font-weight:300; line-height:1.1; margin-bottom:1.25rem; }
+h2 em { font-style:italic; color:var(--green); }
+.body { font-size:15px; line-height:1.85; color:var(--ink2); margin-bottom:1rem; }
+
+/* MERCADO */
+.mercado { border-top:1px solid var(--line); }
+.stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden; margin:2rem 0; }
+.stat { background:white; padding:1.5rem 1.25rem; }
+.stat-num { font-family:'Cormorant Garamond',serif; font-size:40px; line-height:1; color:var(--green); margin-bottom:0.3rem; }
+.stat-label { font-size:11px; color:var(--ink3); line-height:1.5; }
+.stat.gold { background:var(--gold-pale); }
+.stat.gold .stat-num { color:var(--gold); }
+
+.insight { background:var(--ink); border-radius:14px; padding:1.5rem; margin:1.5rem 0; }
+.insight p { font-family:'Cormorant Garamond',serif; font-size:20px; font-style:italic; color:var(--cream); line-height:1.6; }
+.insight span { font-size:11px; color:rgba(247,243,236,0.3); display:block; margin-top:0.75rem; }
+
+/* SOLUCIÓN */
+.solucion { border-top:1px solid var(--line); background:var(--green-pale); border-radius:24px; max-width:none; padding:4rem 1.5rem; }
+.solucion-inner { max-width:500px; margin:0 auto; }
+.moat-item { display:flex; gap:1rem; padding:1.1rem 0; border-bottom:1px solid rgba(45,90,61,0.12); align-items:flex-start; }
+.moat-item:last-child { border-bottom:none; }
+.moat-num { font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--green); width:36px; flex-shrink:0; line-height:1; }
+.moat-text h5 { font-size:14px; font-weight:500; color:var(--ink); margin-bottom:0.2rem; }
+.moat-text p { font-size:13px; color:var(--ink2); line-height:1.6; }
+
+/* NEGOCIO */
+.negocio { border-top:1px solid var(--line); }
+.rev-cards { display:flex; flex-direction:column; gap:0.75rem; margin:2rem 0; }
+.rev-card { background:white; border:1px solid var(--line); border-radius:12px; padding:1.25rem; display:flex; justify-content:space-between; align-items:center; }
+.rev-card-left h5 { font-size:14px; font-weight:500; color:var(--ink); margin-bottom:0.25rem; }
+.rev-card-left p { font-size:12px; color:var(--ink3); }
+.rev-card-price { font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--green); white-space:nowrap; }
+
+.unit-econ { background:var(--gold-pale); border:1px solid rgba(201,168,76,0.2); border-radius:14px; padding:1.5rem; margin:1.5rem 0; }
+.unit-econ h4 { font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1.25rem; }
+.ue-row { display:flex; justify-content:space-between; align-items:center; padding:0.5rem 0; border-bottom:1px solid rgba(201,168,76,0.15); font-size:13px; }
+.ue-row:last-child { border-bottom:none; font-weight:500; }
+.ue-row .val { font-family:'Cormorant Garamond',serif; font-size:20px; color:var(--green); }
+
+/* VENTAJA */
+.ventaja { border-top:1px solid var(--line); }
+.vs-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:13px; }
+.vs-table th { text-align:left; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink3); padding:0 0.75rem 0.75rem; font-weight:400; }
+.vs-table td { padding:0.75rem; border-top:1px solid var(--line); color:var(--ink2); vertical-align:top; }
+.vs-table tr:first-child td { border-top:none; }
+.vs-table td:first-child { color:var(--ink); font-weight:500; }
+.vs-table .lumi-col { color:var(--green); font-weight:500; }
+.check { color:var(--green); } .cross { color:#C0392B; }
+
+/* ROADMAP */
+.roadmap { border-top:1px solid var(--line); }
+.milestones { display:flex; flex-direction:column; gap:0; margin:2rem 0; position:relative; }
+.milestones::before { content:''; position:absolute; left:15px; top:20px; bottom:20px; width:1px; background:var(--line); }
+.milestone { display:flex; gap:1.25rem; padding:1rem 0; }
+.m-dot { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:11px; font-weight:500; }
+.m-dot.done { background:var(--green); color:white; }
+.m-dot.now { background:var(--gold); color:white; }
+.m-dot.next { background:white; color:var(--ink3); border:1px solid var(--line); }
+.m-content h5 { font-size:14px; font-weight:500; color:var(--ink); margin-bottom:0.2rem; }
+.m-content p { font-size:13px; color:var(--ink3); }
+.m-content .phase { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:0.2rem; }
+
+/* RIESGO */
+.riesgo { border-top:1px solid var(--line); background:var(--ink); border-radius:24px; max-width:none; padding:4rem 1.5rem; }
+.riesgo-inner { max-width:500px; margin:0 auto; }
+.riesgo .tag { color:var(--gold); }
+.riesgo h2 { color:var(--cream); }
+.riesgo h2 em { color:var(--gold-warm); }
+.risk-item { padding:1rem 0; border-bottom:1px solid rgba(255,255,255,0.06); }
+.risk-item:last-child { border-bottom:none; }
+.risk-item h5 { font-size:13px; font-weight:500; color:rgba(247,243,236,0.7); margin-bottom:0.3rem; }
+.risk-item p { font-size:12px; color:rgba(247,243,236,0.35); line-height:1.6; }
+
+/* CIERRE */
+.cierre { background:var(--cream); padding:5rem 1.5rem; text-align:center; border-top:1px solid var(--line); }
+.cierre-inner { max-width:380px; margin:0 auto; }
+.cierre h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(30px,7vw,48px); font-weight:300; color:var(--ink); line-height:1.15; margin-bottom:1.25rem; }
+.cierre h2 em { font-style:italic; color:var(--green); }
+.cierre p { font-size:14px; color:var(--ink3); line-height:1.8; }
+.logo-foot { display:flex; align-items:center; justify-content:center; gap:8px; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--line); }
+.logo-foot span { font-family:'Cormorant Garamond',serif; font-size:22px; font-style:italic; color:var(--green); letter-spacing:2px; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="star-wrap">
+    <div class="ring"></div><div class="ring"></div>
+    <svg width="64" height="64" viewBox="0 0 56 56" fill="none">
+      <ellipse cx="28" cy="28" rx="5" ry="23" fill="#E8C97A" opacity="0.93"/>
+      <ellipse cx="28" cy="28" rx="23" ry="5" fill="#E8C97A" opacity="0.93"/>
+      <ellipse cx="28" cy="28" rx="4" ry="17" fill="#E8C97A" transform="rotate(45 28 28)"/>
+      <ellipse cx="28" cy="28" rx="17" ry="4" fill="#E8C97A" transform="rotate(45 28 28)"/>
+      <circle cx="28" cy="28" r="4.5" fill="#1A1714"/>
+      <circle cx="28" cy="28" r="2.8" fill="#E8C97A"/>
+    </svg>
+  </div>
+  <p class="eyebrow fade d1">Lumi · Investor Brief</p>
+  <h1 class="fade d2">El acompañante diario<br>que <em>mil millones</em><br>de personas necesitan.</h1>
+  <p class="hero-sub fade d3">Claridad personal vía WhatsApp — sin apps, sin barreras de adopción, con un modelo de negocio simple y escalable.</p>
+  <div class="hero-chips fade d4">
+    <div class="chip">Pre-seed</div>
+    <div class="chip">MVP activo</div>
+    <div class="chip">Colombia · 2025</div>
+    <div class="chip">Mental wellness</div>
+  </div>
+</div>
+
+<!-- MERCADO -->
+<section class="mercado">
+  <div class="tag">El mercado</div>
+  <h2>Un problema enorme<br><em>sin solución cotidiana.</em></h2>
+  <p class="body">El mercado de salud mental digital crece a doble dígito anual. Pero casi toda la inversión va a terapia online — ignorando el 99% del tiempo que las personas pasan fuera de terapia.</p>
+
+  <div class="stat-grid">
+    <div class="stat">
+      <div class="stat-num">$600B</div>
+      <div class="stat-label">mercado global de salud mental para 2030</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">167h</div>
+      <div class="stat-label">por semana sin acompañamiento, entre sesiones</div>
+    </div>
+    <div class="stat gold">
+      <div class="stat-num">1 de 6</div>
+      <div class="stat-label">personas será mayor de 65 años en 2050 — sin solución tecnológica</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2B+</div>
+      <div class="stat-label">usuarios activos en WhatsApp — canal sin fricción</div>
+    </div>
+  </div>
+
+  <div class="insight">
+    <p>"El sistema de salud mental no está diseñado para el espacio entre sesiones. Lumi lo es."</p>
+    <span>Insight fundacional · Lumi 2025</span>
+  </div>
+</section>
+
+<!-- SOLUCIÓN / MOAT -->
+<div class="solucion">
+  <div class="solucion-inner">
+    <div class="tag">Ventaja estructural</div>
+    <h2>Cuatro razones por las<br>que <em>Lumi gana.</em></h2>
+
+    <div>
+      <div class="moat-item">
+        <div class="moat-num">1</div>
+        <div class="moat-text">
+          <h5>Canal sin fricción</h5>
+          <p>WhatsApp ya está instalado. No hay que descargar nada, crear cuenta, ni aprender nada nuevo. La barrera de adopción es prácticamente cero.</p>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-num">2</div>
+        <div class="moat-text">
+          <h5>Memoria acumulativa</h5>
+          <p>Cada conversación hace a Lumi mejor para esa persona. El valor crece con el tiempo — y el costo de cambiar aumenta con él.</p>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-num">3</div>
+        <div class="moat-text">
+          <h5>Dos mercados en uno</h5>
+          <p>Adultos en transición (25–45) y adultos mayores por voz. El segundo segmento es masivo, completamente desatendido y con un pagador distinto: el familiar.</p>
+        </div>
+      </div>
+      <div class="moat-item">
+        <div class="moat-num">4</div>
+        <div class="moat-text">
+          <h5>Ética como diferenciador</h5>
+          <p>Límites de uso, protocolo de crisis, privacidad por defecto. En un mercado lleno de engagement-bait, Lumi empuja hacia la vida real. Eso genera confianza — y retención real.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NEGOCIO -->
+<section class="negocio">
+  <div class="tag">Modelo de negocio</div>
+  <h2>Tres fuentes.<br><em>Costos mínimos.</em></h2>
+
+  <div class="rev-cards">
+    <div class="rev-card">
+      <div class="rev-card-left">
+        <h5>Suscripción usuario</h5>
+        <p>Plan premium · memoria profunda · voz</p>
+      </div>
+      <div class="rev-card-price">$9/mes</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-card-left">
+        <h5>Directorio profesional</h5>
+        <p>Psicólogos verificados · listing mensual</p>
+      </div>
+      <div class="rev-card-price">TBD</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-card-left">
+        <h5>Comisión por referido</h5>
+        <p>Por cada paciente nuevo derivado a un profesional</p>
+      </div>
+      <div class="rev-card-price">%</div>
+    </div>
+  </div>
+
+  <div class="unit-econ">
+    <h4>Economía unitaria estimada · 50 usuarios</h4>
+    <div class="ue-row"><span>Costo IA (Claude API)</span><span class="val">~$15</span></div>
+    <div class="ue-row"><span>Hosting (Railway)</span><span class="val">$0</span></div>
+    <div class="ue-row"><span>WhatsApp API</span><span class="val">$0</span></div>
+    <div class="ue-row"><span>Costo total operativo</span><span class="val">&lt; $20</span></div>
+    <div class="ue-row"><span>Ingreso bruto (50 × $9)</span><span class="val">$450</span></div>
+    <div class="ue-row"><span style="color:var(--green)">Margen bruto estimado</span><span class="val" style="color:var(--green);">&gt; 95%</span></div>
+  </div>
+</section>
+
+<!-- VENTAJA COMPETITIVA -->
+<section class="ventaja">
+  <div class="tag">Competencia</div>
+  <h2>Por qué no es<br><em>lo mismo que existe.</em></h2>
+  <table class="vs-table">
+    <tr>
+      <th></th>
+      <th>Terapia online</th>
+      <th>Apps meditación</th>
+      <th class="lumi-col">Lumi ✦</th>
+    </tr>
+    <tr>
+      <td>Canal</td>
+      <td>App propia</td>
+      <td>App propia</td>
+      <td class="lumi-col">WhatsApp</td>
+    </tr>
+    <tr>
+      <td>Adultos mayores</td>
+      <td class="cross">✗</td>
+      <td class="cross">✗</td>
+      <td class="lumi-col check">✓ voz</td>
+    </tr>
+    <tr>
+      <td>Memoria personal</td>
+      <td class="cross">✗</td>
+      <td class="cross">✗</td>
+      <td class="lumi-col check">✓ crece</td>
+    </tr>
+    <tr>
+      <td>Protocolo crisis</td>
+      <td class="check">✓</td>
+      <td class="cross">✗</td>
+      <td class="lumi-col check">✓</td>
+    </tr>
+    <tr>
+      <td>Costo usuario/mes</td>
+      <td>$80–200</td>
+      <td>$10–15</td>
+      <td class="lumi-col">$9</td>
+    </tr>
+    <tr>
+      <td>Margen bruto</td>
+      <td>~40%</td>
+      <td>~70%</td>
+      <td class="lumi-col">&gt;95%</td>
+    </tr>
+  </table>
+</section>
+
+<!-- ROADMAP -->
+<section class="roadmap">
+  <div class="tag">Hoja de ruta</div>
+  <h2>De MVP a<br><em>producto validado.</em></h2>
+
+  <div class="milestones">
+    <div class="milestone">
+      <div class="m-dot done">✓</div>
+      <div class="m-content">
+        <div class="phase">Completado</div>
+        <h5>Bot desplegado y activo</h5>
+        <p>WhatsApp API · Claude · Railway · protocolo de crisis</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="m-dot now">→</div>
+      <div class="m-content">
+        <div class="phase">Ahora · Q1 2025</div>
+        <h5>Primeros 10 usuarios piloto</h5>
+        <p>Validar loop diario · medir retención 30 días</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="m-dot next">2</div>
+      <div class="m-content">
+        <div class="phase">Q2 2025</div>
+        <h5>Base de datos encriptada + voz</h5>
+        <p>PostgreSQL · transcripción · adultos mayores activos</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="m-dot next">3</div>
+      <div class="m-content">
+        <div class="phase">Q3 2025</div>
+        <h5>100 usuarios · primeros ingresos</h5>
+        <p>Landing · onboarding · directorio de profesionales</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="m-dot next">4</div>
+      <div class="m-content">
+        <div class="phase">2026</div>
+        <h5>Expansión regional</h5>
+        <p>México · Argentina · España · recursos crisis locales</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RIESGOS HONESTOS -->
+<div class="riesgo">
+  <div class="riesgo-inner">
+    <div class="tag">Honestidad</div>
+    <h2>Los riesgos<br><em>que sabemos.</em></h2>
+    <div>
+      <div class="risk-item">
+        <h5>Sin tracción todavía</h5>
+        <p>El producto existe y funciona, pero no tiene usuarios activos aún. La validación de retención está pendiente.</p>
+      </div>
+      <div class="risk-item">
+        <h5>Dependencia de WhatsApp / Meta</h5>
+        <p>El canal es una plataforma de terceros. Cambios en la API o políticas pueden afectar la operación.</p>
+      </div>
+      <div class="risk-item">
+        <h5>Regulación de salud mental</h5>
+        <p>Un producto en el espacio de bienestar mental requiere criterio clínico. Lo estamos construyendo con una psicóloga colaboradora desde el inicio.</p>
+      </div>
+      <div class="risk-item">
+        <h5>Mercado fragmentado</h5>
+        <p>Muchas apps de bienestar han fallado por baja retención. Nuestra apuesta diferenciadora es la memoria acumulativa y los límites de uso deliberados.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CIERRE -->
+<div class="cierre">
+  <div class="cierre-inner">
+    <h2>Una conversación<br><em>para empezar.</em></h2>
+    <p>Estamos en etapa pre-seed buscando a los primeros aliados que crean que el acompañamiento cotidiano es una categoría real — y que Lumi puede liderarla.</p>
+    <div class="logo-foot">
+      <svg width="20" height="20" viewBox="0 0 56 56" fill="none">
+        <ellipse cx="28" cy="28" rx="5" ry="23" fill="#C9A84C" opacity="0.93"/>
+        <ellipse cx="28" cy="28" rx="23" ry="5" fill="#C9A84C" opacity="0.93"/>
+        <ellipse cx="28" cy="28" rx="4" ry="17" fill="#C9A84C" transform="rotate(45 28 28)"/>
+        <ellipse cx="28" cy="28" rx="17" ry="4" fill="#C9A84C" transform="rotate(45 28 28)"/>
+        <circle cx="28" cy="28" r="4.5" fill="white"/>
+        <circle cx="28" cy="28" r="2.8" fill="#C9A84C"/>
+      </svg>
+      <span>lumi</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
