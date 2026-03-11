@@ -9,9 +9,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --cream: #F5F0E8; --cream-dark: #EDE7DA; --gold: #C9A84C; --gold-light: #E8C97A;
-  --green: #2D5A3D; --green-light: #4A8C62; --dark: #1A1714;
-  --gray: #9A9490; --gray-light: #C8C3BB;
-  --text: #2A2520; --text-light: #6B6560;
+  --green: #2D5A3D; --green-light: #4A8C62; --dark: #0A0908;
+  --gray: #706B67; --gray-light: #C8C3BB;
+  --text: #151210; --text-light: #4A4541;
 }
 html { scroll-behavior: smooth; }
 body { background: var(--cream); font-family: 'DM Sans', sans-serif; color: var(--dark); min-height: 100vh; }
@@ -23,25 +23,25 @@ header {
   border-bottom: 1px solid rgba(201,168,76,0.15);
 }
 .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.logo-text { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; font-style: italic; color: var(--green); letter-spacing: 1.5px; }
-.back-link { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray); text-decoration: none; transition: color 0.2s; }
+.logo-text { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; font-style: italic; color: var(--green); letter-spacing: 1.5px; }
+.back-link { font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray); text-decoration: none; transition: color 0.2s; }
 .back-link:hover { color: var(--green); }
 
 .doc-hero { padding: 4rem 2rem 2rem; max-width: 760px; margin: 0 auto; }
-.doc-label { font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-.doc-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px,5vw,52px); font-weight: 300; font-style: italic; color: var(--dark); line-height: 1.2; margin-bottom: 1rem; }
-.doc-meta { font-size: 12px; color: var(--gray-light); letter-spacing: 0.1em; }
+.doc-label { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.doc-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 5vw, 62px); font-weight: 300; font-style: italic; color: var(--dark); line-height: 1.2; margin-bottom: 1rem; }
+.doc-meta { font-size: 14px; color: var(--gray-light); letter-spacing: 0.1em; }
 .doc-divider { height: 1px; background: linear-gradient(to right, var(--gold-light), transparent); opacity: 0.5; margin: 2rem 0; }
 
 .doc-body { max-width: 760px; margin: 0 auto; padding: 0 2rem 6rem; }
 
-.doc-notice { background: white; border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; font-size: 14px; color: var(--text-light); line-height: 1.7; }
+.doc-notice { background: white; border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; font-size: 16px; color: var(--text-light); line-height: 1.7; }
 
-h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px,3vw,26px); font-weight: 400; font-style: italic; color: var(--green); margin: 2.5rem 0 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(201,168,76,0.2); }
-h3 { font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark); margin: 1.5rem 0 0.5rem; }
-p { font-size: 17px; font-weight: 300; color: var(--text-light); line-height: 1.8; margin-bottom: 1rem; }
+h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 3vw, 31px); font-weight: 400; font-style: italic; color: var(--green); margin: 2.5rem 0 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(201,168,76,0.2); }
+h3 { font-size: 15px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark); margin: 1.5rem 0 0.5rem; }
+p { font-size: 20px; font-weight: 300; color: var(--text-light); line-height: 1.8; margin-bottom: 1rem; }
 ul { padding-left: 1.25rem; margin-bottom: 1rem; }
-ul li { font-size: 17px; font-weight: 300; color: var(--text-light); line-height: 1.8; margin-bottom: 0.4rem; }
+ul li { font-size: 20px; font-weight: 300; color: var(--text-light); line-height: 1.8; margin-bottom: 0.4rem; }
 ul li::marker { color: var(--gold); }
 strong { color: var(--dark); font-weight: 500; }
 
@@ -53,17 +53,17 @@ strong { color: var(--dark); font-weight: 500; }
 .info-box p { color: var(--green); margin: 0; }
 
 .table-wrap { overflow-x: auto; margin: 1.25rem 0; }
-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
 th { background: rgba(45,90,61,0.08); color: var(--green); font-weight: 500; padding: 0.75rem 1rem; text-align: left; border-bottom: 2px solid rgba(45,90,61,0.15); }
 td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--cream-dark); color: var(--text-light); font-weight: 300; vertical-align: top; }
 tr:last-child td { border-bottom: none; }
 
 footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(201,168,76,0.1); }
 .footer-logo { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 0.75rem; }
-.footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 300; font-style: italic; color: var(--green); letter-spacing: 1.5px; }
-.footer-text { font-size: 11px; color: var(--gray-light); letter-spacing: 0.15em; text-transform: uppercase; }
+.footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 300; font-style: italic; color: var(--green); letter-spacing: 1.5px; }
+.footer-text { font-size: 13px; color: var(--gray-light); letter-spacing: 0.15em; text-transform: uppercase; }
 .footer-legal { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 0.75rem; }
-.footer-legal a { font-size: 10px; color: var(--gray-light); text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+.footer-legal a { font-size: 12px; color: var(--gray-light); text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
 .footer-legal a:hover { color: var(--green); }
 @media(max-width:600px){ header{padding:1rem 1.25rem;} .doc-hero{padding:2.5rem 1.25rem 1.5rem;} .doc-body{padding:0 1.25rem 4rem;} }
 </style>

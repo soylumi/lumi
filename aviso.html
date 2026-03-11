@@ -9,30 +9,30 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --cream: #F5F0E8; --cream-dark: #EDE7DA; --gold: #C9A84C; --gold-light: #E8C97A;
-  --green: #2D5A3D; --green-light: #4A8C62; --dark: #1A1714;
-  --gray: #9A9490; --gray-light: #C8C3BB;
-  --text: #2A2520; --text-light: #6B6560;
+  --green: #2D5A3D; --green-light: #4A8C62; --dark: #0A0908;
+  --gray: #706B67; --gray-light: #C8C3BB;
+  --text: #151210; --text-light: #4A4541;
 }
 html { scroll-behavior: smooth; }
 body { background: var(--cream); font-family: 'DM Sans', sans-serif; color: var(--dark); min-height: 100vh; }
 header { position: sticky; top: 0; z-index: 100; padding: 1.25rem 3rem; display: flex; align-items: center; justify-content: space-between; background: rgba(245,240,232,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,168,76,0.15); }
 .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.logo-text { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; font-style: italic; color: var(--green); letter-spacing: 1.5px; }
-.back-link { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray); text-decoration: none; transition: color 0.2s; }
+.logo-text { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; font-style: italic; color: var(--green); letter-spacing: 1.5px; }
+.back-link { font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray); text-decoration: none; transition: color 0.2s; }
 .back-link:hover { color: var(--green); }
 
 .doc-hero { padding: 4rem 2rem 2rem; max-width: 700px; margin: 0 auto; }
-.doc-label { font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-.doc-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px,5vw,52px); font-weight: 300; font-style: italic; color: var(--dark); line-height: 1.2; margin-bottom: 1rem; }
-.doc-meta { font-size: 12px; color: var(--gray-light); letter-spacing: 0.1em; }
+.doc-label { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.doc-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 5vw, 62px); font-weight: 300; font-style: italic; color: var(--dark); line-height: 1.2; margin-bottom: 1rem; }
+.doc-meta { font-size: 14px; color: var(--gray-light); letter-spacing: 0.1em; }
 .doc-divider { height: 1px; background: linear-gradient(to right, var(--gold-light), transparent); opacity: 0.5; margin: 2rem 0; }
 
 .doc-body { max-width: 700px; margin: 0 auto; padding: 0 2rem 6rem; }
 
 /* Cards de respuesta — estilo Q&A */
 .qa-block { margin-bottom: 2rem; }
-.qa-q { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; color: var(--dark); margin-bottom: 0.6rem; }
-.qa-a { font-size: 15px; font-weight: 300; color: var(--gray); line-height: 1.8; }
+.qa-q { font-size: 15px; font-weight: 500; letter-spacing: 0.08em; color: var(--dark); margin-bottom: 0.6rem; }
+.qa-a { font-size: 18px; font-weight: 300; color: var(--gray); line-height: 1.8; }
 .qa-a ul { padding-left: 1.25rem; margin-top: 0.5rem; }
 .qa-a ul li { margin-bottom: 0.4rem; }
 .qa-a ul li::marker { color: var(--gold); }
@@ -40,24 +40,24 @@ header { position: sticky; top: 0; z-index: 100; padding: 1.25rem 3rem; display:
 
 .section-divider { height: 1px; background: var(--cream-dark); margin: 2.5rem 0; }
 
-.alert-box { background: rgba(224,85,85,0.06); border-left: 3px solid #D04040; border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; font-size: 14px; color: #7A2020; line-height: 1.7; }
+.alert-box { background: rgba(224,85,85,0.06); border-left: 3px solid #D04040; border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; font-size: 16px; color: #7A2020; line-height: 1.7; }
 .alert-box strong { color: #D04040; }
-.info-box { background: rgba(45,90,61,0.05); border-left: 3px solid var(--green); border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; font-size: 14px; color: var(--green); line-height: 1.7; }
-.warn-box { background: rgba(201,168,76,0.08); border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; font-size: 14px; color: #7A5A10; line-height: 1.7; }
+.info-box { background: rgba(45,90,61,0.05); border-left: 3px solid var(--green); border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; font-size: 16px; color: var(--green); line-height: 1.7; }
+.warn-box { background: rgba(201,168,76,0.08); border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; font-size: 16px; color: #7A5A10; line-height: 1.7; }
 
 .confirm-box { background: var(--dark); border-radius: 20px; padding: 2.5rem; margin: 3rem 0 2rem; text-align: center; }
 .confirm-box .star { margin-bottom: 1rem; }
-.confirm-box p { font-family: 'Cormorant Garamond', serif; font-size: clamp(18px,3vw,24px); font-weight: 300; font-style: italic; color: var(--cream); line-height: 1.6; margin-bottom: 0.75rem; }
+.confirm-box p { font-family: 'Cormorant Garamond', serif; font-size: clamp(21px, 3vw, 28px); font-weight: 300; font-style: italic; color: var(--cream); line-height: 1.6; margin-bottom: 0.75rem; }
 .confirm-box .docs { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
-.confirm-box .docs a { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); text-decoration: none; transition: color 0.2s; }
+.confirm-box .docs a { font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); text-decoration: none; transition: color 0.2s; }
 .confirm-box .docs a:hover { color: white; }
 
 footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(201,168,76,0.1); }
 .footer-logo { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 0.75rem; }
-.footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 300; font-style: italic; color: var(--green); letter-spacing: 1.5px; }
-.footer-text { font-size: 11px; color: var(--gray-light); letter-spacing: 0.15em; text-transform: uppercase; }
+.footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 300; font-style: italic; color: var(--green); letter-spacing: 1.5px; }
+.footer-text { font-size: 13px; color: var(--gray-light); letter-spacing: 0.15em; text-transform: uppercase; }
 .footer-legal { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 0.75rem; }
-.footer-legal a { font-size: 10px; color: var(--gray-light); text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+.footer-legal a { font-size: 12px; color: var(--gray-light); text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
 .footer-legal a:hover { color: var(--green); }
 @media(max-width:600px){ header{padding:1rem 1.25rem;} .doc-hero{padding:2.5rem 1.25rem 1.5rem;} .doc-body{padding:0 1.25rem 4rem;} .confirm-box{padding:2rem 1.5rem;} }
 </style>
@@ -88,7 +88,7 @@ footer { padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(201,
 
 <div class="doc-body">
 
-  <p style="font-size:16px; color:var(--gray); line-height:1.8; margin-bottom:2rem;">Hola. Antes de empezar, queremos que sepas exactamente cómo cuidamos tu información. Sin letra pequeña.</p>
+  <p style="font-size: 19px; color:var(--gray); line-height:1.8; margin-bottom:2rem;">Hola. Antes de empezar, queremos que sepas exactamente cómo cuidamos tu información. Sin letra pequeña.</p>
 
   <div class="qa-block">
     <div class="qa-q">¿Quién recolecta mis datos?</div>
